@@ -1,0 +1,6 @@
+language: objective-c
+osx_image: xcode11
+script:
+    - xcodebuild clean build -project ./SwiftySound.xcodeproj -scheme SwiftySound-macOS CODE_SIGNING_REQUIRED=NO test
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
